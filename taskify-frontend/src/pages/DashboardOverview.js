@@ -17,20 +17,36 @@ function DashboardOverview() {
       .catch((err) => console.error('Error loading tasks:', err));
   }, [userId]);
 
+  function isToday(dateStr) {
+  const taskDate = new Date(dateStr);
+  const today = new Date();
+
+  return (
+    taskDate.getDate() === today.getDate() &&
+    taskDate.getMonth() === today.getMonth() &&
+    taskDate.getFullYear() === today.getFullYear()
+  );
+}
+  
   const total = tasks.length;
   const pending = tasks.filter((t) => t.status === 'Pending').length;
   const inProgress = tasks.filter((t) => t.status === 'In Progress').length;
   const completed = tasks.filter((t) => t.status === 'Completed').length;
   const recentTasks = [...tasks].slice(-3).reverse();
+  const todayTasks = tasks.filter(task => isToday(task.dueDate));
 
   
   return (
     <div className="overview-container">
       <div className="overview-header">
         <h2>Welcome, {username}!</h2>
-        
-      </div>
 
+      {todayTasks.length > 0 && (
+        <div className="notification">
+          🔔 You have {todayTasks.length} task{todayTasks.length > 1 ? 's' : ''} assigned for today!
+        </div>
+      )}
+    </div>
       <div className="stats-cards">
         <div className="card">📋 Total Tasks: {total}</div>
         <div className="card">🕒 Pending: {pending}</div>
