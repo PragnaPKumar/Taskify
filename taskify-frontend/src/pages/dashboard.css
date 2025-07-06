@@ -1,0 +1,205 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #030303, #73068b);
+  font-family: Arial, sans-serif;
+  color: #010101; /* default text color */
+}
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #030303, #73068b);
+  font-family: sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #5e0565;
+  padding: 20px;
+  color: white;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar button {
+  color: rgb(32, 9, 30);
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+  background: linear-gradient(135deg, #030303, #73068b); /* same as container */
+  color: white; /* to ensure text is readable on dark background */
+  overflow-y: auto;
+}
+.dashboard-content h1,
+.dashboard-content h2,
+.dashboard-content p,
+.dashboard-content li {
+  color: white;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.task-form button {
+  background-color: #7e1cbf;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.task-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.sidebar {
+  width: 200px;
+  background-color: #ffffff; /* white background */
+  padding: 20px;
+  color: #000000; /* black text */
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #5e0565; /* optional accent for title */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+/* Make links look like part of the white sidebar */
+.sidebar a {
+  color: #5e0565; /* matches your purple theme */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar button {
+  color: #5e0565;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.logout-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #eee9ee;
+  z-index: 1000;
+}
+
+.logout-icon:hover {
+  color: #f3f0f3;
+}
+/* Add in dashboard.css */
+
+.overview-container {
+  padding: 30px;
+  color: white;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background: #7e1cbf;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.stats-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1;
+  background: #5e0565;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.quick-links button {
+  margin-right: 10px;
+  background: #7e1cbf;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recent-tasks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-tasks li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+.recent-tasks {
+  margin-top: 30px; /* adds space above Recent Tasks */
+}
+
+.recent-tasks h3 {
+  margin-bottom: 15px; /* adds space below the heading */
+}

@@ -1,0 +1,168 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #030303, #73068b);
+  font-family: Arial, sans-serif;
+  color: #010101; /* default text color */
+}
+/* Label styling */
+.register-form label {
+  color: #eae6ea;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Container centered and with subtle gradient overlay */
+.register-container {
+  height: 100vh; /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient overlay on container */
+.register-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(115, 6, 139, 0.4), rgba(3, 3, 3, 0.7));
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Heading above the form with pulse animation */
+.register-container h2 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #452743;
+  animation: pulseColor 3s ease-in-out infinite;
+}
+
+/* Pulse color animation */
+@keyframes pulseColor {
+  0%, 100% { color: #eae6ea; }
+  50% { color: #131313; }
+}
+
+/* Form styling with slide up + fade in animation */
+.register-form {
+  position: relative;
+  z-index: 1;
+  background-color: #5e0565;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: slideUpFadeIn 0.8s ease forwards;
+  opacity: 0; /* start hidden, animation reveals */
+}
+
+/* Slide up + fade animation */
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input styles */
+.register-form input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #6e3e6a;
+  background-color: #5e0565; /* consistent solid background */
+  color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px 14px 12px 38px; /* add left padding if icon present */
+  background-color: #5e0565;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid #6e3e6a;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+/* Input focus glow */
+.register-form input:focus {
+  border-color: #e367d7;
+  box-shadow: 0 0 8px 2px rgba(227, 103, 215, 0.6);
+  background-color: #6a1e78;
+  outline: none;
+}
+
+
+/* Placeholder fade on focus */
+.register-form input:focus::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+/* Button styling with gradient and shadow */
+.register-form button {
+  padding: 12px;
+  background: linear-gradient(135deg, #7e1cbf, #e367d7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(227, 103, 215, 0.5);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.25s ease;
+}
+
+/* Button hover effect: scale + shadow glow */
+.register-form button:hover {
+  background: linear-gradient(135deg, #e367d7, #7e1cbf);
+  box-shadow: 0 6px 20px rgba(227, 103, 215, 0.7);
+  transform: scale(1.05);
+}
+
+/* Button active state */
+.register-form button:active {
+  transform: scale(1);
+  box-shadow: 0 4px 12px rgba(227, 103, 215, 0.6);
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .register-container h2 {
+    font-size: 20px;
+  }
+
+  .register-form input,
+  .register-form button {
+    font-size: 16px;
+  }
+}
+.logo {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #e367d7);
+}
